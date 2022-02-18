@@ -1,0 +1,10 @@
+QWidget {
+    font-family: "Arial";
+    font-size: 12px;
+}
+
+QFrame#FrameNavbar { background-color: #00FF00; border: 1px solid #DDDDDD; }
+QFrame#FrameHome { background-color: #CCCCFF; border: 1px solid #DDDDDD; }
+QFrame#FrameMusic { background-color: #CCFFCC; border: 1px solid #DDDDDD; }
+QFrame#FrameWeather { background-color: #FFCCCC; border: 1px solid #DDDDDD; }
+QFrame#FrameSettings { background-color: #FF00FF; border: 1px solid #DDDDDD; }

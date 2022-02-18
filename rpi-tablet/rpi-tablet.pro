@@ -26,3 +26,6 @@ HEADERS += frames/framehome.h
 HEADERS += frames/framemusic.h
 HEADERS += frames/frameweather.h
 HEADERS += frames/framesettings.h
+
+
+RESOURCES += assets/assets.qrc

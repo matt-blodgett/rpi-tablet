@@ -6,6 +6,7 @@
 #include "frames/framesettings.h"
 
 #include <QMediaPlayer>
+#include <QFile>
 
 #include <QGridLayout>
 
@@ -13,41 +14,40 @@
 #include <QDebug>
 
 
-void MainWindow::initializeStyleSheet()
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
-    centralWidget()->setObjectName("CentralWidget");
-    m_frmNavbar->setObjectName("FrameNavbar");
-    m_frmHome->setObjectName("FrameHome");
-    m_frmMusic->setObjectName("FrameMusic");
-    m_frmWeather->setObjectName("FrameWeather");
-    m_frmSettings->setObjectName("FrameSettings");
+    initialize();
+}
+MainWindow::~MainWindow()
+{
 
-    QString styleSheet = "";
-//    styleSheet += "QWidget#CentralWidget { background-color: #00FF00; border: 1px solid #FF0000; } ";
-    styleSheet += "QFrame#FrameNavbar { background-color: #00FF00; border: 1px solid #DDDDDD; } ";
-    styleSheet += "QFrame#FrameHome { background-color: #CCCCFF; border: 1px solid #DDDDDD; } ";
-    styleSheet += "QFrame#FrameMusic { background-color: #CCFFCC; border: 1px solid #DDDDDD; } ";
-    styleSheet += "QFrame#FrameWeather { background-color: #FFCCCC; border: 1px solid #DDDDDD; } ";
-    styleSheet += "QFrame#FrameSettings { background-color: #FF00FF; border: 1px solid #DDDDDD; } ";
-
-    setStyleSheet(styleSheet);
 }
 
+void MainWindow::initialize()
+{
+    initializeObjects();
+    initializeLayout();
+    initializeState();
+    initializeStyle();
+    centralWidget()->show();
+}
+void MainWindow::initializeObjects()
+{
+    m_mediaPlayer = new QMediaPlayer(this);
+    m_frmNavbar = new FrameNavbar(this);
+    m_frmHome = new FrameHome(this);
+    m_frmMusic = new FrameMusic(this);
+    m_frmWeather = new FrameWeather(this);
+    m_frmSettings = new FrameSettings(this);
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
+    connect(m_frmNavbar, &FrameNavbar::clickedOption, this, &MainWindow::changeFrame);
+}
+void MainWindow::initializeLayout()
 {
     setFixedWidth(800);
     setFixedHeight(480);
 
-    m_mediaPlayer = new QMediaPlayer(this);
-
     QWidget *frmMain = new QWidget(this);
-    m_frmNavbar = new FrameNavbar(frmMain);
-    m_frmHome = new FrameHome(frmMain);
-    m_frmMusic = new FrameMusic(frmMain);
-    m_frmWeather = new FrameWeather(frmMain);
-    m_frmSettings = new FrameSettings(frmMain);
-
     QGridLayout *gridMain = new QGridLayout();
     gridMain->setContentsMargins(0, 0, 0, 0);
     gridMain->setHorizontalSpacing(0);
@@ -66,17 +66,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     m_frmSettings->hide();
 
     setCentralWidget(frmMain);
-    centralWidget()->show();
-
-
-    // testing
-    initializeStyleSheet();
-
-    connect(m_frmNavbar, &FrameNavbar::clickedOption, this, &MainWindow::changeFrame);
 }
-MainWindow::~MainWindow()
+void MainWindow::initializeState()
 {
 
+}
+void MainWindow::initializeStyle()
+{
+    m_frmNavbar->setObjectName("FrameNavbar");
+    m_frmHome->setObjectName("FrameHome");
+    m_frmMusic->setObjectName("FrameMusic");
+    m_frmWeather->setObjectName("FrameWeather");
+    m_frmSettings->setObjectName("FrameSettings");
+
+    QFile file(":/styles/default.qss");
+    if (file.open(QIODevice::ReadOnly)) {
+        QString qss = file.readAll();
+        setStyleSheet(qss);
+    }
 }
 
 void MainWindow::changeFrame(const QString &name)

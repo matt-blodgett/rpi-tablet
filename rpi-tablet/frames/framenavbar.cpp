@@ -25,10 +25,15 @@ FrameNavbar::FrameNavbar(QWidget *parent) : QFrame(parent)
     gridMain->setRowStretch(4, 1);
     setLayout(gridMain);
 
-    m_btnHome->setText("1");
-    m_btnMusic->setText("2");
-    m_btnWeather->setText("3");
-    m_btnSettings->setText("4");
+    m_btnHome->setIcon(QIcon(":/icons/navbar/home.png"));
+    m_btnMusic->setIcon(QIcon(":/icons/navbar/music.png"));
+    m_btnWeather->setIcon(QIcon(":/icons/navbar/weather.png"));
+    m_btnSettings->setIcon(QIcon(":/icons/navbar/settings.png"));
+
+    m_btnHome->setIconSize(QSize(48, 48));
+    m_btnMusic->setIconSize(QSize(48, 48));
+    m_btnWeather->setIconSize(QSize(48, 48));
+    m_btnSettings->setIconSize(QSize(48, 48));
 
     connect(m_btnHome, &QPushButton::clicked, this, [=]{emit clickedOption("home");});
     connect(m_btnMusic, &QPushButton::clicked, this, [=]{emit clickedOption("music");});

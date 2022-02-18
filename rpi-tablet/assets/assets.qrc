@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/icons/navbar">
+        <file alias="home.png">icons/navbar/home.png</file>
+        <file alias="music.png">icons/navbar/music.png</file>
+        <file alias="weather.png">icons/navbar/weather.png</file>
+        <file alias="settings.png">icons/navbar/settings.png</file>
+    </qresource>
+    <qresource prefix="/icons/playback">
+        <file alias="next-dark.png">icons/playback/next-dark.png</file>
+        <file alias="next-light.png">icons/playback/next-light.png</file>
+        <file alias="paus-dark.png">icons/playback/paus-dark.png</file>
+        <file alias="paus-light.png">icons/playback/paus-light.png</file>
+        <file alias="play-dark.png">icons/playback/play-dark.png</file>
+        <file alias="play-light.png">icons/playback/play-light.png</file>
+        <file alias="prev-dark.png">icons/playback/prev-dark.png</file>
+        <file alias="prev-light.png">icons/playback/prev-light.png</file>
+        <file alias="search-dark.png">icons/playback/search-dark.png</file>
+        <file alias="search-light.png">icons/playback/search-light.png</file>
+    </qresource>
+    <qresource prefix="/styles">
+        <file alias="default.qss">styles/default.qss</file>
+    </qresource>
+</RCC>

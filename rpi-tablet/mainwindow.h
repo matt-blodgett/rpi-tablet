@@ -26,7 +26,11 @@ public:
     ~MainWindow();
 
 private:
-    void initializeStyleSheet();
+    void initialize();
+    void initializeObjects();
+    void initializeLayout();
+    void initializeState();
+    void initializeStyle();
 
 private:
     QMediaPlayer *m_mediaPlayer = nullptr;

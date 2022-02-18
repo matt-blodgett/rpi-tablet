@@ -53,9 +53,9 @@ FrameMusic::FrameMusic(QWidget *parent) : QFrame(parent)
     grid3->addWidget(m_sldVolume, 1, 0, 1, 3);
 
     QGridLayout *gridMain = new QGridLayout();
-//    gridMain->setContentsMargins(0, 0, 0, 0);
-//    gridMain->setHorizontalSpacing(0);
-//    gridMain->setVerticalSpacing(0);
+    gridMain->setContentsMargins(0, 0, 0, 0);
+    gridMain->setHorizontalSpacing(0);
+    gridMain->setVerticalSpacing(0);
     gridMain->addWidget(m_lblTitle, 0, 0, 1, 1);
     gridMain->addLayout(grid1, 1, 0, 1, 1, Qt::AlignTop);
     gridMain->addLayout(grid2, 2, 0, 1, 1, Qt::AlignCenter);
