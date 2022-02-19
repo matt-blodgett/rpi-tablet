@@ -10,11 +10,12 @@ class QMediaPlayer;
 QT_END_NAMESPACE
 
 
-class FrameNavbar;
-class FrameHome;
-class FrameMusic;
-class FrameWeather;
-class FrameSettings;
+class WindowBanner;
+class WindowNavbar;
+class PageHome;
+class PageMusic;
+class PageWeather;
+class PageSettings;
 
 
 class MainWindow : public QMainWindow
@@ -34,14 +35,15 @@ private:
 
 private:
     QMediaPlayer *m_mediaPlayer = nullptr;
-    FrameNavbar *m_frmNavbar = nullptr;
-    FrameHome *m_frmHome = nullptr;
-    FrameMusic *m_frmMusic = nullptr;
-    FrameWeather *m_frmWeather = nullptr;
-    FrameSettings *m_frmSettings = nullptr;
+    WindowBanner *m_frmBanner = nullptr;
+    WindowNavbar *m_frmNavbar = nullptr;
+    PageHome *m_frmHome = nullptr;
+    PageMusic *m_frmMusic = nullptr;
+    PageWeather *m_frmWeather = nullptr;
+    PageSettings *m_frmSettings = nullptr;
 
 public slots:
-    void changeFrame(const QString &name);
+    void changePage(const QString &name);
 };
 
 

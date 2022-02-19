@@ -3,8 +3,36 @@ QWidget {
     font-size: 12px;
 }
 
-QFrame#FrameNavbar { background-color: #00FF00; border: 1px solid #DDDDDD; }
-QFrame#FrameHome { background-color: #CCCCFF; border: 1px solid #DDDDDD; }
-QFrame#FrameMusic { background-color: #CCFFCC; border: 1px solid #DDDDDD; }
-QFrame#FrameWeather { background-color: #FFCCCC; border: 1px solid #DDDDDD; }
-QFrame#FrameSettings { background-color: #FF00FF; border: 1px solid #DDDDDD; }
+
+QFrame#WindowBanner {
+    background-color: #E6E6E6;
+    border-bottom: 1px solid #000000;
+}
+QLabel#WindowBannerTitle {
+    font-size: 16px;
+    font-weight: bold;
+}
+QLabel#WindowBannerTime {
+    font-size: 16px;
+}
+QFrame#WindowNavbar {
+    background-color: #E6E6E6;
+    border-left: 1px solid #000000;
+}
+
+
+QFrame#PageHome {
+    background-color: #E6E6E6;
+}
+QFrame#PageMusic {
+    background-color: #E6E6E6;
+}
+QFrame#PageWeather {
+    background-color: #E6E6E6;
+}
+QFrame#PageSettings {
+    background-color: #E6E6E6;
+}
+QLabel#PagePlaceholder {
+    font-size: 36px;
+}

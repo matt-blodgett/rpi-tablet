@@ -1,5 +1,5 @@
-#ifndef FRAMEMUSIC_H
-#define FRAMEMUSIC_H
+#ifndef PAGEMUSIC_H
+#define PAGEMUSIC_H
 
 
 #include <QFrame>
@@ -12,15 +12,20 @@ class QSlider;
 QT_END_NAMESPACE
 
 
-class FrameMusic : public QFrame
+class PageMusic : public QFrame
 {
     Q_OBJECT
 
 public:
-    explicit FrameMusic(QWidget *parent = nullptr);
+    explicit PageMusic(QWidget *parent = nullptr);
+    QString pageTitle() const;
 
 private:
-    QLabel *m_lblTitle = nullptr;
+    void initialize();
+    void initializeObjects();
+    void initializeLayout();
+
+private:
     QWidget *m_frmAlbumArt = nullptr;
     QLabel *m_lblSongTitle = nullptr;
     QLabel *m_lblArtistName = nullptr;

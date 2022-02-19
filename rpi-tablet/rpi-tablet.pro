@@ -14,18 +14,20 @@ QT += multimedia
 
 SOURCES += main.cpp
 SOURCES += mainwindow.cpp
-SOURCES += frames/framenavbar.cpp
-SOURCES += frames/framehome.cpp
-SOURCES += frames/framemusic.cpp
-SOURCES += frames/frameweather.cpp
-SOURCES += frames/framesettings.cpp
+SOURCES += window/windowbanner.cpp
+SOURCES += window/windownavbar.cpp
+SOURCES += pages/pagehome.cpp
+SOURCES += pages/pagemusic.cpp
+SOURCES += pages/pageweather.cpp
+SOURCES += pages/pagesettings.cpp
 
 HEADERS += mainwindow.h
-HEADERS += frames/framenavbar.h
-HEADERS += frames/framehome.h
-HEADERS += frames/framemusic.h
-HEADERS += frames/frameweather.h
-HEADERS += frames/framesettings.h
+HEADERS += window/windowbanner.h
+HEADERS += window/windownavbar.h
+HEADERS += pages/pagehome.h
+HEADERS += pages/pagemusic.h
+HEADERS += pages/pageweather.h
+HEADERS += pages/pagesettings.h
 
 
 RESOURCES += assets/assets.qrc

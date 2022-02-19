@@ -1,5 +1,5 @@
-#ifndef FRAMENAVBAR_H
-#define FRAMENAVBAR_H
+#ifndef WINDOWNAVBAR_H
+#define WINDOWNAVBAR_H
 
 
 #include <QFrame>
@@ -10,12 +10,17 @@ class QPushButton;
 QT_END_NAMESPACE
 
 
-class FrameNavbar : public QFrame
+class WindowNavbar : public QFrame
 {
     Q_OBJECT
 
 public:
-    explicit FrameNavbar(QWidget *parent = nullptr);
+    explicit WindowNavbar(QWidget *parent = nullptr);
+
+private:
+    void initialize();
+    void initializeObjects();
+    void initializeLayout();
 
 private:
     QPushButton *m_btnHome = nullptr;
@@ -24,7 +29,7 @@ private:
     QPushButton *m_btnSettings = nullptr;
 
 signals:
-    void clickedOption(const QString &option);
+    void optionClicked(const QString &option);
 };
 
 
