@@ -9,30 +9,15 @@
 
 WindowBanner::WindowBanner(QWidget *parent) : QFrame(parent)
 {
-    initialize();
-}
-
-void WindowBanner::initialize()
-{
-    initializeObjects();
-    initializeLayout();
-}
-void WindowBanner::initializeObjects()
-{
     m_lblTitle = new QLabel(this);
     m_lblClock = new QLabel(this);
 
-//    m_frmClock = new QFrame(this);
-//    m_frmClock->setFixedWidth(10);
-//    m_frmClock->setFixedHeight(10);
-//    m_frmClock->setStyleSheet("QWidget { background-color: #ACACAC; border: 1px solid #000000; } ");
-
-    m_lblTitle->setObjectName("WindowBannerTitle");
-    m_lblClock->setObjectName("WindowBannerTime");
     m_lblClock->setText("14:25");
-}
-void WindowBanner::initializeLayout()
-{
+
+    m_lblTitle->setObjectName("LabelTitle");
+    m_lblClock->setObjectName("LabelTime");
+    setObjectName("WindowBanner");
+
     QGridLayout *gridMain = new QGridLayout();
 //    gridMain->setContentsMargins(0, 0, 0, 0);
 //    gridMain->setHorizontalSpacing(0);

@@ -9,26 +9,11 @@
 
 PageWeather::PageWeather(QWidget *parent) : QFrame(parent)
 {
-    initialize();
-}
-QString PageWeather::pageTitle() const
-{
-    return "Weather";
-}
-
-void PageWeather::initialize()
-{
-    initializeObjects();
-    initializeLayout();
-}
-void PageWeather::initializeObjects()
-{
     m_lblPlaceholder = new QLabel(this);
     m_lblPlaceholder->setText("This feature is not currently available.");
-    m_lblPlaceholder->setObjectName("PagePlaceholder");
-}
-void PageWeather::initializeLayout()
-{
+    m_lblPlaceholder->setObjectName("LabelPlaceholder");
+    setObjectName("PageWeather");
+
     QGridLayout *gridMain = new QGridLayout();
     gridMain->setContentsMargins(0, 0, 0, 0);
     gridMain->setHorizontalSpacing(0);
@@ -37,4 +22,8 @@ void PageWeather::initializeLayout()
     gridMain->setRowStretch(0, 1);
     gridMain->setColumnStretch(0, 1);
     setLayout(gridMain);
+}
+QString PageWeather::pageTitle() const
+{
+    return "Weather";
 }

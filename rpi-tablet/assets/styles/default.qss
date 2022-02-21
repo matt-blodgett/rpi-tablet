@@ -1,38 +1,232 @@
+/* -------------------------------------------------- */
+/* QWidget */
+/* -------------------------------------------------- */
 QWidget {
     font-family: "Arial";
     font-size: 12px;
 }
 
 
-QFrame#WindowBanner {
-    background-color: #E6E6E6;
-    border-bottom: 1px solid #000000;
+/* -------------------------------------------------- */
+/* WindowBanner */
+/* -------------------------------------------------- */
+WindowBanner {
+    background-color: #101010;
+    border-bottom: 1px solid #FFFFFF;
 }
-QLabel#WindowBannerTitle {
+
+WindowBanner QLabel#LabelTitle {
+    color: #FFFFFF;
     font-size: 16px;
     font-weight: bold;
 }
-QLabel#WindowBannerTime {
+
+WindowBanner QLabel#LabelTime {
+    color: #FFFFFF;
     font-size: 16px;
 }
-QFrame#WindowNavbar {
-    background-color: #E6E6E6;
-    border-left: 1px solid #000000;
+
+
+/* -------------------------------------------------- */
+/* WindowNavbar */
+/* -------------------------------------------------- */
+WindowNavbar {
+    background-color: #101010;
+    border-left: 1px solid #FFFFFF;
 }
 
 
-QFrame#PageHome {
-    background-color: #E6E6E6;
+/* -------------------------------------------------- */
+/* PageHome */
+/* -------------------------------------------------- */
+PageHome {
+    background-color: #202020;
 }
-QFrame#PageMusic {
-    background-color: #E6E6E6;
+
+
+/* -------------------------------------------------- */
+/* PageMusic */
+/* -------------------------------------------------- */
+PageMusic {
+    background-color: #202020;
 }
-QFrame#PageWeather {
-    background-color: #E6E6E6;
+
+PageMusic QWidget#FrameAlbumArt {
+    background-color: #ACACAC;
+    border: 2px solid #000000;
 }
-QFrame#PageSettings {
-    background-color: #E6E6E6;
+
+PageMusic QLabel#LabelSongTitle {
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
 }
-QLabel#PagePlaceholder {
+
+PageMusic QLabel#LabelArtistName {
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0px 0px 0px 0px;
+}
+
+PageMusic QSlider#SliderPosition {
+    border: 0px solid transparent;
+    height: 8px;
+}
+PageMusic QSlider#SliderPosition::handle:horizontal {
+    background: #FFFFFF;
+    width: 16px;
+    margin: -2px 0px;
+}
+PageMusic QSlider#SliderPosition::groove:horizontal {
+    background: #000000;
+    position: absolute;
+    height: 3px;
+    left: 4px;
+    right: 4px;
+}
+PageMusic QSlider#SliderPosition::add-page:horizontal {
+    background: #ADADAD;
+}
+PageMusic QSlider#SliderPosition::sub-page:horizontal {
+    background: #EDEDED;
+}
+
+PageMusic QLabel#LabelTimeElapsed {
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 0px 3px 3px 3px;
+}
+
+PageMusic QLabel#LabelTimeRemaining {
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 0px 3px 3px 3px;
+}
+
+PageMusic QPushButton#ButtonPlayPause {
+    background: transparent;
+    qproperty-flat: true;
+    qproperty-icon: url(":/icons/media/light/play.png");
+    qproperty-iconSize: 40px 40px;
+}
+PageMusic QPushButton#ButtonPlayPause:hover {
+    background: #191919;
+}
+PageMusic QPushButton#ButtonPlayPause:pressed {
+    background: #FFFFFF;
+}
+PageMusic QPushButton#ButtonPlayPause:flat {
+    border: 3px solid #ADADAD;
+    border-radius: 6px;
+}
+
+PageMusic QPushButton#ButtonNextSong {
+    background: qlineargradient(
+        x1: 1, y1: 0, x2: 0, y2: 0,
+        stop: 0 #333333, stop: 1 #555555
+    );
+    qproperty-flat: true;
+    qproperty-icon: url(":/icons/media/light/next.png");
+    qproperty-iconSize: 40px 40px;
+}
+PageMusic QPushButton#ButtonNextSong:hover {
+    background: #191919;
+}
+PageMusic QPushButton#ButtonNextSong:pressed {
+    background: qlineargradient(
+        x1: 1, y1: 0, x2: 0, y2: 0,
+        stop: 0 #CCCCCC, stop: 1 #E2E2E2
+    );
+}
+PageMusic QPushButton#ButtonNextSong:flat {
+    border: none;
+}
+
+PageMusic QPushButton#ButtonBackSong {
+    background: #ACACAC;
+    qproperty-flat: true;
+    qproperty-icon: url(":/icons/media/light/back.png");
+    qproperty-iconSize: 40px 40px;
+}
+PageMusic QPushButton#ButtonBackSong:hover {
+    background: #ACACAC;
+}
+PageMusic QPushButton#ButtonBackSong:pressed {
+    max-height: 10px;
+}
+PageMusic QPushButton#ButtonBackSong:flat {
+    border: none;
+}
+
+PageMusic QSlider#SliderVolume {
+    border: 0px solid transparent;
+    height: 8px;
+}
+PageMusic QSlider#SliderVolume::handle:horizontal {
+    background: #FFFFFF;
+    width: 16px;
+    margin: -2px 0px;
+}
+PageMusic QSlider#SliderVolume::groove:horizontal {
+    background: #000000;
+    position: absolute;
+    height: 3px;
+    left: 4px;
+    right: 4px;
+}
+PageMusic QSlider#SliderVolume::add-page:horizontal {
+    background: #ADADAD;
+}
+PageMusic QSlider#SliderVolume::sub-page:horizontal {
+    background: #EDEDED;
+}
+
+
+/* -------------------------------------------------- */
+/* PageWeather */
+/* -------------------------------------------------- */
+PageWeather {
+    background-color: #202020;
+}
+
+
+/* -------------------------------------------------- */
+/* PageSettings */
+/* -------------------------------------------------- */
+PageSettings {
+    background-color: #202020;
+}
+
+
+/* -------------------------------------------------- */
+QLabel#LabelPlaceholder {
+    color: #FFFFFF;
     font-size: 36px;
+}
+
+
+/* -------------------------------------------------- */
+QWidget#SongListViewScrollAreaWidget {
+    background-color: #FFFFFF;
+}
+SongListViewItem {
+    background-color: #999999;
+    border: 1px solid #000000;
+}
+SongListViewItem:hover {
+    background-color: #888888;
+    border: 1px solid #000000;
+}
+SongListViewItem-Pressed {
+    background-color: #777777;
+    border: 1px solid #000000;
+}
+QLabel#SongListViewItemLabelName {
+    font-size: 18px;
 }

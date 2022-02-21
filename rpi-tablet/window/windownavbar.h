@@ -18,11 +18,6 @@ public:
     explicit WindowNavbar(QWidget *parent = nullptr);
 
 private:
-    void initialize();
-    void initializeObjects();
-    void initializeLayout();
-
-private:
     QPushButton *m_btnHome = nullptr;
     QPushButton *m_btnMusic = nullptr;
     QPushButton *m_btnWeather = nullptr;

@@ -11,13 +11,33 @@
 #include <QMediaPlayer>
 #include <QFile>
 
+#include <QAction>
+#include <QMenuBar>
+
 
 #include <QDebug>
+
+
+void MainWindow::refreshStylesheet()
+{
+    QFile file("/home/matt/Desktop/rpi-tablet/rpi-tablet/assets/styles/default.qss");
+    if (file.open(QIODevice::ReadOnly)) {
+        QString qss = file.readAll();
+        setStyleSheet(qss);
+    }
+}
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     initialize();
+
+    QAction *actRefreshStylesheet = new QAction("Refresh Stylesheet", this);
+    connect(actRefreshStylesheet, &QAction::triggered, this, &MainWindow::refreshStylesheet);
+    menuBar()->addAction(actRefreshStylesheet);
+
+    // testing (should come from settings)
+    setGeometry(2300, 250, 800, 480);
 }
 MainWindow::~MainWindow()
 {
@@ -64,12 +84,12 @@ void MainWindow::initializeLayout()
     gridMain->setColumnStretch(0, 1);
     frmMain->setLayout(gridMain);
 
+    setCentralWidget(frmMain);
+
     m_frmMusic->hide();
     m_frmWeather->hide();
     m_frmSettings->hide();
     m_frmBanner->setTitle(m_frmHome->pageTitle());
-
-    setCentralWidget(frmMain);
 }
 void MainWindow::initializeState()
 {
@@ -77,13 +97,6 @@ void MainWindow::initializeState()
 }
 void MainWindow::initializeStyle()
 {
-    m_frmBanner->setObjectName("WindowBanner");
-    m_frmNavbar->setObjectName("WindowNavbar");
-    m_frmHome->setObjectName("PageHome");
-    m_frmMusic->setObjectName("PageMusic");
-    m_frmWeather->setObjectName("PageWeather");
-    m_frmSettings->setObjectName("PageSettings");
-
     QFile file(":/styles/default.qss");
     if (file.open(QIODevice::ReadOnly)) {
         QString qss = file.readAll();

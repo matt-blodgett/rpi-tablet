@@ -17,17 +17,12 @@ class WindowBanner : public QFrame
 public:
     explicit WindowBanner(QWidget *parent = nullptr);
 
-private:
-    void initialize();
-    void initializeObjects();
-    void initializeLayout();
+public:
+    void setTitle(const QString &title);
 
 private:
     QLabel *m_lblTitle = nullptr;
     QLabel *m_lblClock = nullptr;
-
-public:
-    void setTitle(const QString &title);
 };
 
 

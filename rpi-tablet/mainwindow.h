@@ -33,6 +33,8 @@ private:
     void initializeState();
     void initializeStyle();
 
+    void refreshStylesheet();
+
 private:
     QMediaPlayer *m_mediaPlayer = nullptr;
     WindowBanner *m_frmBanner = nullptr;

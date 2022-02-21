@@ -12,6 +12,9 @@ class QSlider;
 QT_END_NAMESPACE
 
 
+class SongListView;
+
+
 class PageMusic : public QFrame
 {
     Q_OBJECT
@@ -21,11 +24,7 @@ public:
     QString pageTitle() const;
 
 private:
-    void initialize();
-    void initializeObjects();
-    void initializeLayout();
-
-private:
+    SongListView *m_frmSongListView = nullptr;
     QWidget *m_frmAlbumArt = nullptr;
     QLabel *m_lblSongTitle = nullptr;
     QLabel *m_lblArtistName = nullptr;

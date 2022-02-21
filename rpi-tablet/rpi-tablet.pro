@@ -12,7 +12,8 @@ QT += widgets
 QT += multimedia
 
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    components/songlistview.cpp
 SOURCES += mainwindow.cpp
 SOURCES += window/windowbanner.cpp
 SOURCES += window/windownavbar.cpp
@@ -21,7 +22,8 @@ SOURCES += pages/pagemusic.cpp
 SOURCES += pages/pageweather.cpp
 SOURCES += pages/pagesettings.cpp
 
-HEADERS += mainwindow.h
+HEADERS += mainwindow.h \
+    components/songlistview.h
 HEADERS += window/windowbanner.h
 HEADERS += window/windownavbar.h
 HEADERS += pages/pagehome.h

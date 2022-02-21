@@ -9,16 +9,6 @@
 
 WindowNavbar::WindowNavbar(QWidget *parent) : QFrame(parent)
 {
-    initialize();
-}
-
-void WindowNavbar::initialize()
-{
-    initializeObjects();
-    initializeLayout();
-}
-void WindowNavbar::initializeObjects()
-{
     m_btnHome = new QPushButton(this);
     m_btnMusic = new QPushButton(this);
     m_btnWeather = new QPushButton(this);
@@ -38,9 +28,9 @@ void WindowNavbar::initializeObjects()
     connect(m_btnMusic, &QPushButton::clicked, this, [=]{emit optionClicked("music");});
     connect(m_btnWeather, &QPushButton::clicked, this, [=]{emit optionClicked("weather");});
     connect(m_btnSettings, &QPushButton::clicked, this, [=]{emit optionClicked("settings");});
-}
-void WindowNavbar::initializeLayout()
-{
+
+    setObjectName("WindowNavbar");
+
     QGridLayout *gridFrame = new QGridLayout();
 //    gridFrame->setContentsMargins(5, 5, 5, 5);
 //    gridFrame->setHorizontalSpacing(0);

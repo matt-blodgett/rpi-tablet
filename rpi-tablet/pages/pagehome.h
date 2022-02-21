@@ -19,11 +19,6 @@ public:
     QString pageTitle() const;
 
 private:
-    void initialize();
-    void initializeObjects();
-    void initializeLayout();
-
-private:
     QLabel *m_lblPlaceholder = nullptr;
 };
 
